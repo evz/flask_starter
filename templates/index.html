@@ -55,10 +55,11 @@
 
         <div class="row">
             <div class="col-md-12">
-                <form class="form" action="/" method="POST">
+                <form class="form" action="/" method="POST" enctype="multipart/form-data">
                     <div class="form-group" id="upload_form_group">
                        <label class="col-sm-2 control-label">Upload file</label>
                        <div class="col-sm-10">
+                           <input type="text" placeholder="reporters name" name="name"/>
                            <input type="file" id="id_input_file" name="input_file">
                            <p class="help-block">
                                Only <strong>.csv, .xls or .xlsx</strong> files.
@@ -75,6 +76,9 @@
                     <button class="btn btn-info" type="submit">
                         Next &raquo;
                     </button>
+                    {% if message %}
+                        <h1>{{ message }}</h1>
+                    {% endif %}
                 </form>
             </div>
         </div>
